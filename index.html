@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kit Currículo de Aprovação Imediata</title>
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📑</text></svg>">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.95;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 18px 40px;
+            background: linear-gradient(45deg, #ffd700, #ffed4e);
+            color: #333;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.3);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(255, 215, 0, 0.4);
+            background: linear-gradient(45deg, #ffed4e, #ffd700);
+        }
+
+        /* Product Section */
+        .product-section {
+            padding: 100px 0;
+            background: white;
+            text-align: center;
+        }
+
+        .product-section h2 {
+            font-size: 2.8rem;
+            margin-bottom: 3rem;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .product-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+            margin-bottom: 3rem;
+        }
+
+        .benefits {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 4rem 0;
+        }
+
+        .benefit-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .benefit-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #667eea;
+        }
+
+        .benefit-card p {
+            color: #666;
+            line-height: 1.7;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 2.8rem;
+            margin-bottom: 2rem;
+            font-weight: 600;
+        }
+
+        .price {
+            font-size: 2rem;
+            margin: 2rem 0;
+        }
+
+        .old-price {
+            text-decoration: line-through;
+            color: #ccc;
+            font-size: 1.5rem;
+        }
+
+        .new-price {
+            color: #ffd700;
+            font-weight: 700;
+            font-size: 3rem;
+            display: block;
+            margin-top: 0.5rem;
+        }
+
+        /* Footer */
+        .footer {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .footer h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            font-weight: 600;
+        }
+
+        .footer p {
+            font-size: 1.2rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.9;
+        }
+
+        .copyright {
+            background: #1a252f;
+            padding: 20px 0;
+            text-align: center;
+            color: #bbb;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .btn {
+                padding: 15px 30px;
+                font-size: 1rem;
+            }
+
+            .product-section h2,
+            .cta-section h2,
+            .footer h2 {
+                font-size: 2rem;
+            }
+
+            .container {
+                padding: 0 15px;
+            }
+
+            .benefits {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .benefit-card {
+                padding: 2rem;
+            }
+
+            .new-price {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                padding: 60px 0;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .product-section,
+            .cta-section,
+            .footer {
+                padding: 60px 0;
+            }
+
+            .btn {
+                padding: 12px 25px;
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Smooth scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Touch-friendly buttons for mobile */
+        @media (hover: none) and (pointer: coarse) {
+            .btn {
+                padding: 20px 40px;
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Seu Currículo Está Sendo Ignorado?</h1>
+                <p>Baixe agora o <strong>Kit Currículo de Aprovação Imediata</strong> e aumente suas chances de entrevista ainda hoje.</p>
+                <button class="btn" onclick="scrollToMiddle()">QUERO MEU KIT AGORA</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Section -->
+    <section class="product-section">
+        <div class="container">
+            <h2>Veja como o kit chega até você</h2>
+            <img src="mackup.png" alt="Kit Currículo de Aprovação Imediata - Modelos profissionais de currículo" class="product-image">
+            
+            <div class="benefits">
+                <div class="benefit-card">
+                    <h3>3 Modelos Profissionais</h3>
+                    <p>Escolha entre <strong>Tradicional, Moderno ou Impacto</strong> e preencha em minutos. Nada de bloqueio criativo.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <h3>10 Mandamentos do Currículo</h3>
+                    <p>Evite erros fatais que eliminam 90% dos candidatos logo na primeira triagem.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <h3>5 Mensagens Matadoras</h3>
+                    <p>Aborde recrutadores com mensagens testadas que aumentam em até 30% as respostas.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section (Middle Button) -->
+    <section id="middle-section" class="cta-section">
+        <div class="container">
+            <h2>Oferta Especial de Lançamento</h2>
+            <div class="price">
+                <span class="old-price">Valor real: R$ 93,00</span>
+                <span class="new-price">Hoje: R$ 37,00</span>
+            </div>
+            <a href="LINK AQUI" class="btn">GARANTIR MEU KIT</a>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <section class="footer">
+        <div class="container">
+            <h2>Cada vaga perdida é um atraso no seu futuro</h2>
+            <p>Garante agora o seu kit e esteja à frente de 90% dos candidatos já na próxima semana.</p>
+            <button class="btn" onclick="scrollToMiddle()">QUERO SER APROVADO AGORA</button>
+        </div>
+    </section>
+
+    <!-- Copyright -->
+    <div class="copyright">
+        <div class="container">
+            <p>© 2025 Kit Currículo de Aprovação Imediata. Todos os direitos reservados.</p>
+        </div>
+    </div>
+
+    <script>
+        function scrollToMiddle() {
+            document.getElementById('middle-section').scrollIntoView({
+                behavior: 'smooth',
+                block: 'center'
+            });
+        }
+
+        // Add touch support for mobile devices
+        document.addEventListener('DOMContentLoaded', function() {
+            // Ensure smooth scrolling works on all devices
+            const buttons = document.querySelectorAll('button[onclick="scrollToMiddle()"]');
+            buttons.forEach(button => {
+                button.addEventListener('touchstart', function() {
+                    this.style.transform = 'translateY(-2px)';
+                });
+                button.addEventListener('touchend', function() {
+                    this.style.transform = 'translateY(0)';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+
